@@ -5,21 +5,6 @@ from typing import Collection, List, Tuple, Union
 
 import aiosmtplib
 
-HOST = "smtp.gmail.com"
-# https://kb.sandisk.com/app/answers/detail/a_id/17056/~/list-of-mobile-carrier-gateway-addresses
-# https://www.gmass.co/blog/send-text-from-gmail/
-CARRIER_MAP = {
-    "verizon": "vtext.com",
-    "tmobile": "tmomail.net",
-    "sprint": "messaging.sprintpcs.com",
-    "at&t": "txt.att.net",
-    "boost": "smsmyboostmobile.com",
-    "cricket": "sms.cricketwireless.net",
-    "uscellular": "email.uscc.net",
-    "bell": "txt.bell.ca"
-}
-
-
 # pylint: disable=too-many-arguments
 async def send_txt(
     num: Union[str, int], carrier: str, email: str, pword: str, msg: str, subj: str
